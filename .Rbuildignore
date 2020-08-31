@@ -1,1 +1,3 @@
 z_template_package/.Rbuildignore
+^.*\.Rproj$
+^\.Rproj\.user$
