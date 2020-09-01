@@ -47,8 +47,8 @@ calc_greedy_Qp <- function(target_period, values, sampling_rate){
   n = length(values)
 
   k = n / (target_period * sampling_rate)
-  xNow = c(x, rep.int(NA, ceiling(k) * (target_period * sampling_rate) - n))
+  xNow = c(values, rep.int(NA, ceiling(k) * (target_period * sampling_rate) - n))
   xMat = matrix(xNow, ncol = (target_period * sampling_rate), byrow = TRUE)
   xH = colMeans(xMat, na.rm = TRUE)
-  qP = k * n * sum((xH - m)^2) / sum((x - m)^2)
+  qP = k * n * sum((xH - m)^2) / sum((values - m)^2)
 }
